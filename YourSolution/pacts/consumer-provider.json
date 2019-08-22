@@ -23,6 +23,57 @@
           "message": "validDateTime is not a date or time"
         }
       }
+    },
+    {
+      "description": "An invalid GET request for Date with no date parameter",
+      "providerState": "There is data",
+      "request": {
+        "method": "get",
+        "path": "/api/provider",
+        "query": "validDateTime="
+      },
+      "response": {
+        "status": 400,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": {
+          "message": "validDateTime is required"
+        }
+      }
+    },
+    {
+      "description": "A valid GET request without data",
+      "providerState": "There is no data",
+      "request": {
+        "method": "get",
+        "path": "/api/provider",
+        "query": "validDateTime=05/01/2018"
+      },
+      "response": {
+        "status": 404,
+        "headers": {
+        }
+      }
+    },
+    {
+      "description": "A valid GET request returns a date",
+      "providerState": "There is data",
+      "request": {
+        "method": "get",
+        "path": "/api/provider",
+        "query": "validDateTime=05/01/2018"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": {
+          "test": "NO",
+          "validDateTime": "01-05-2018 00:00:00"
+        }
+      }
     }
   ],
   "metadata": {
