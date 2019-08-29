@@ -45,7 +45,7 @@ namespace Provider.Controllers
 
             return new JsonResult(new {
                 test = "NO",
-                validDateTime = parsedDateTime.ToString("dd-MM-yyyy HH:mm:ss")
+                validDateTime = parsedDateTime.ToString("dd-MM-yyyy")
             });
         }
 
